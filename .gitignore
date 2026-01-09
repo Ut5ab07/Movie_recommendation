@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Flask / general
+instance/
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Screenshots or other local resources you don't want to push
+screenshots/
