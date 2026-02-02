@@ -101,11 +101,14 @@ movie-recommender-graph/
 
 ---
 
-## 👨‍💻 Author
-Developed as part of a Discrete Mathematics & Graph Theory project.
 ## 🔮 Future Improvements
 
 - Weighted edges based on rating strength  
 - Community detection for genre clusters  
 - Hybrid model (Graph + ML)  
 - Real-time recommendation interface  
+
+---
+
+## 👨‍💻 Author
+Developed as part of a Discrete Mathematics & Graph Theory project.
