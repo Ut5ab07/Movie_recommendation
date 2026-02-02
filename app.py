@@ -66,10 +66,18 @@ def recommend_movies(user_id, preferred_genre):
 # Flask Routes
 #---------------------
 
+def get_genres():
+    movies = pd.read_csv("movies.csv")
+    genres = set()
+    for genre_str in movies["genre"].dropna():
+        for g in genre_str.split(','):
+            genres.add(g.strip())
+    return sorted(list(genres))
+
 # Linking html with python code with Flask
 @app.route('/')
 def home():
-    return render_template('index.html', recommendations=None)
+    return render_template('index.html', recommendations=None, genres=get_genres())
 
 
 # Recommending Movies Based on User Input
@@ -78,7 +86,7 @@ def recommend():
     user_id = int(request.form['user_id'])
     genre = request.form['genre']
     recommendations = recommend_movies(user_id, genre)
-    return render_template('index.html', recommendations=recommendations, user_id=user_id, genre=genre)
+    return render_template('index.html', recommendations=recommendations, user_id=user_id, genre=genre, genres=get_genres())
 
 if __name__ == "__main__":
     app.run(debug=True)
